@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multilingual Mandi – AI for Bharat</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+      color: #222;
+      text-align: center;
+    }
+
+    .container { padding: 80px 20px; }
+    h1 { font-size: 3rem; margin-bottom: 10px; }
+    p { font-size: 1.1rem; margin-bottom: 20px; }
+
+    .btn {
+      padding: 14px 28px;
+      font-size: 1rem;
+      border: none;
+      background: #138808;
+      color: white;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .section { display: none; padding: 40px 20px; }
+
+    .card {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      text-align: left;
+    }
+
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    select, input { width: 100%; padding: 10px; margin-top: 5px; }
+
+    .result {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="container" id="intro">
+  <h1 id="title">Multilingual Mandi</h1>
+  <p id="tagline">Breaking language barriers in local trade using AI</p>
+  <p><strong>AI for Bharat · 26 Jan Prompt Challenge</strong></p>
+  <button class="btn" onclick="startDemo()" id="startBtn">Start Live Demo</button>
+</div>
+
+<!-- DEMO -->
+<div class="section" id="demo">
+  <div class="card">
+    <h2 id="dashboardTitle">Vendor Dashboard</h2>
+
+    <label id="langLabel">Preferred Language</label>
+    <select id="language" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+    </select>
+
+    <label id="productLabel">Product Name</label>
+    <input id="product" placeholder="e.g. Tomato" />
+
+    <label id="quantityLabel">Quantity</label>
+    <input id="quantity" placeholder="e.g. 50 kg" />
+
+    <label id="locationLabel">Market Location</label>
+    <input id="location" placeholder="e.g. Delhi Mandi" />
+
+    <button class="btn" onclick="getAIPrice()" id="priceBtn">Get AI Price</button>
+
+    <div id="aiOutput" class="result" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+  const translations = {
+    en: {
+      title: "Multilingual Mandi",
+      tagline: "Breaking language barriers in local trade using AI",
+      startBtn: "Start Live Demo",
+      dashboardTitle: "Vendor Dashboard",
+      langLabel: "Preferred Language",
+      productLabel: "Product Name",
+      quantityLabel: "Quantity",
+      locationLabel: "Market Location",
+      priceBtn: "Get AI Price",
+      loading: "🤖 AI is analyzing market data...",
+      price: "AI Suggested Price",
+      tip: "Negotiation Tip",
+      confirm: "Fair deal suggested for transparency"
+    },
+    hi: {
+      title: "बहुभाषी मंडी",
+      tagline: "एआई के माध्यम से स्थानीय व्यापार में भाषा बाधाओं को तोड़ना",
+      startBtn: "डेमो शुरू करें",
+      dashboardTitle: "विक्रेता डैशबोर्ड",
+      langLabel: "भाषा चुनें",
+      productLabel: "उत्पाद का नाम",
+      quantityLabel: "मात्रा",
+      locationLabel: "बाज़ार स्थान",
+      priceBtn: "एआई मूल्य प्राप्त करें",
+      loading: "🤖 एआई बाज़ार डेटा का विश्लेषण कर रहा है...",
+      price: "एआई द्वारा सुझाया गया मूल्य",
+      tip: "मोलभाव सुझाव",
+      confirm: "पारदर्शिता के लिए उचित सौदा सुझाया गया"
+    }
+  };
+
+  let currentLang = "en";
+
+  function startDemo() {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("demo").style.display = "block";
+  }
+
+  function changeLanguage() {
+    currentLang = document.getElementById("language").value;
+    const t = translations[currentLang];
+
+    document.getElementById("title").innerText = t.title;
+    document.getElementById("tagline").innerText = t.tagline;
+    document.getElementById("startBtn").innerText = t.startBtn;
+    document.getElementById("dashboardTitle").innerText = t.dashboardTitle;
+    document.getElementById("langLabel").innerText = t.langLabel;
+    document.getElementById("productLabel").innerText = t.productLabel;
+    document.getElementById("quantityLabel").innerText = t.quantityLabel;
+    document.getElementById("locationLabel").innerText = t.locationLabel;
+    document.getElementById("priceBtn").innerText = t.priceBtn;
+  }
+
+  function getAIPrice() {
+    const output = document.getElementById("aiOutput");
+    const t = translations[currentLang];
+
+    output.style.display = "block";
+    output.innerHTML = `<p>${t.loading}</p>`;
+
+    setTimeout(() => {
+      const min = 22;
+      const max = 25;
+      output.innerHTML = `
+        <p><strong>${t.price}:</strong> ₹${min} – ₹${max} / kg</p>
+        <p><strong>${t.tip}:</strong> ₹23 से शुरुआत करें</p>
+        <p><em>${t.confirm}</em></p>
+      `;
+    }, 1200);
+  }
+</script>
+
+</body>
+</html>
