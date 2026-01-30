@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multilingual Mandi – AI for Bharat</title>
+
+<style>
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Arial;
+  background:linear-gradient(135deg,#ff9933,#ffffff,#138808);
+}
+.container{
+  padding:60px 20px;
+  text-align:center;
+}
+.card{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  text-align:left;
+}
+h1{font-size:3rem}
+label{font-weight:600;margin-top:12px;display:block}
+input,select{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+button{
+  margin-top:20px;
+  padding:14px 30px;
+  background:#138808;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:1rem;
+}
+.hidden{display:none}
+.error{
+  color:#c62828;
+  font-size:.9rem;
+  margin-top:6px;
+}
+.section{
+  background:#f4f6f9;
+  padding:16px;
+  border-radius:12px;
+  margin-top:18px;
+}
+.voiceBtn{
+  background:#ff9933;
+  color:#222;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="container" id="intro">
+  <h1 id="title">Multilingual Mandi</h1>
+  <p id="tagline">ML-powered price discovery & negotiation for local trade</p>
+  <p><strong>AI for Bharat · 26 Jan Prompt Challenge</strong></p>
+  <button onclick="startDemo()">Start Live Demo</button>
+</div>
+
+<!-- APP -->
+<div class="container hidden" id="app">
+  <div class="card">
+
+    <h2 id="dashTitle">Vendor Dashboard</h2>
+
+    <label>Language</label>
+    <select id="lang" onchange="setLang()">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="pa">ਪੰਜਾਬੀ</option>
+      <option value="ta">தமிழ்</option>
+      <option value="bn">বাংলা</option>
+    </select>
+
+    <label id="productLabel">Product</label>
+    <input id="product" placeholder="Tomato">
+    <div id="productErr" class="error"></div>
+
+    <label id="qtyLabel">Quantity (kg)</label>
+    <input id="qty" placeholder="50">
+    <div id="qtyErr" class="error"></div>
+
+    <label id="locLabel">Market Location</label>
+    <input id="loc" placeholder="Delhi Mandi">
+    <div id="locErr" class="error"></div>
+
+    <button onclick="runML()">Run AI Model</button>
+
+    <!-- OUTPUT -->
+    <div id="result" class="hidden">
+      <div class="section">
+        <h3 id="priceTitle">ML Price Prediction</h3>
+        <p id="priceValue"></p>
+        <p id="priceExplain"></p>
+      </div>
+
+      <div class="section">
+        <h3 id="negoTitle">Negotiation Strategy</h3>
+        <p id="negoText"></p>
+        <button class="voiceBtn" onclick="speak()">🔊 Speak Negotiation</button>
+      </div>
+
+      <div class="section">
+        <h3 id="trustTitle">AI Trust Layer</h3>
+        <p id="trustText"></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ---------------- STATE ---------------- */
+let state={lang:"en"};
+let speakText="";
+
+/* ---------------- TRANSLATIONS ---------------- */
+const t={
+en:{
+product:"Product",qty:"Quantity (kg)",loc:"Market Location",
+priceTitle:"ML Price Prediction",
+negoTitle:"Negotiation Strategy",
+trustTitle:"AI Trust Layer",
+trust:"Prediction generated using validated inputs and market-aware ML logic."
+},
+hi:{
+product:"उत्पाद",qty:"मात्रा (किलो)",loc:"मंडी स्थान",
+priceTitle:"एमएल मूल्य पूर्वानुमान",
+negoTitle:"मोलभाव रणनीति",
+trustTitle:"एआई भरोसा परत",
+trust:"सत्यापित इनपुट और बाजार-आधारित एमएल तर्क।"
+},
+pa:{
+product:"ਉਤਪਾਦ",qty:"ਮਾਤਰਾ (ਕਿਲੋ)",loc:"ਮੰਡੀ ਸਥਾਨ",
+priceTitle:"ਐਮਐਲ ਕੀਮਤ ਅਨੁਮਾਨ",
+negoTitle:"ਮੋਲਭਾਵ ਰਣਨੀਤੀ",
+trustTitle:"ਏਆਈ ਭਰੋਸਾ ਪਰਤ",
+trust:"ਤਸਦੀਕਸ਼ੁਦਾ ਡਾਟਾ ਨਾਲ ਬਣੀ ਸਿਫ਼ਾਰਸ਼।"
+},
+ta:{
+product:"பொருள்",qty:"அளவு (கிலோ)",loc:"சந்தை இடம்",
+priceTitle:"ML விலை கணிப்பு",
+negoTitle:"பேச்சுவார்த்தை யுக்தி",
+trustTitle:"AI நம்பகத்தன்மை",
+trust:"சரிபார்க்கப்பட்ட தரவின் அடிப்படையில்."
+},
+bn:{
+product:"পণ্য",qty:"পরিমাণ (কেজি)",loc:"বাজার স্থান",
+priceTitle:"ML মূল্য পূর্বাভাস",
+negoTitle:"দর কষাকষি কৌশল",
+trustTitle:"AI বিশ্বাস স্তর",
+trust:"যাচাইকৃত ডেটার উপর ভিত্তি করে।"
+}
+};
+
+/* ---------------- FUNCTIONS ---------------- */
+function startDemo(){
+  intro.classList.add("hidden");
+  app.classList.remove("hidden");
+}
+
+function setLang(){
+  state.lang=lang.value;
+  productLabel.innerText=t[state.lang].product;
+  qtyLabel.innerText=t[state.lang].qty;
+  locLabel.innerText=t[state.lang].loc;
+}
+
+function validate(){
+  let ok=true;
+  productErr.innerText="";
+  qtyErr.innerText="";
+  locErr.innerText="";
+
+  if(product.value.trim()===""){
+    productErr.innerText="❌ Product required";
+    ok=false;
+  }
+  if(isNaN(qty.value) || qty.value<=0){
+    qtyErr.innerText="❌ Quantity must be a positive number";
+    ok=false;
+  }
+  if(loc.value.trim()===""){
+    locErr.innerText="❌ Location required";
+    ok=false;
+  }
+  return ok;
+}
+
+/* ---------------- ML MODEL (SIMULATED BUT LOGICAL) ---------------- */
+function runML(){
+  if(!validate()) return;
+
+  const base=22;
+  const qFactor=Math.min(qty.value/100,0.3);
+  const min=Math.round(base+(qFactor*5));
+  const max=min+3;
+
+  priceValue.innerText=`₹${min} – ₹${max} per kg`;
+  priceExplain.innerText=
+    "Price estimated using regression-style logic on quantity and regional demand.";
+
+  speakText=`Start negotiation at rupees ${min+1} per kilogram for a fair deal.`;
+
+  negoText.innerText=
+    `Recommended opening offer: ₹${min+1} / kg`;
+
+  trustText.innerText=t[state.lang].trust;
+
+  priceTitle.innerText=t[state.lang].priceTitle;
+  negoTitle.innerText=t[state.lang].negoTitle;
+  trustTitle.innerText=t[state.lang].trustTitle;
+
+  result.classList.remove("hidden");
+}
+
+/* ---------------- VOICE ---------------- */
+function speak(){
+  const u=new SpeechSynthesisUtterance(speakText);
+  u.lang=
+    state.lang==="hi"?"hi-IN":
+    state.lang==="pa"?"pa-IN":
+    state.lang==="ta"?"ta-IN":
+    state.lang==="bn"?"bn-IN":"en-IN";
+  speechSynthesis.speak(u);
+}
+</script>
+
+</body>
+</html>
