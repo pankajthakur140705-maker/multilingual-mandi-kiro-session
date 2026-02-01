@@ -1,49 +1,49 @@
 # 🌾 Multilingual Mandi  
-### AI-Powered Voice-Enabled Market Price & Negotiation Assistant for Farmers
+### AI-Powered Voice-First Market Price & Negotiation Assistant for Farmers
 
-> **Breaking language barriers in agriculture using AI, voice, and local intelligence.**
+> **Empowering farmers with fair prices, local languages, and AI-driven negotiation — one voice at a time.**
 
 ---
 
 ## 🚀 Overview
 
-**Multilingual Mandi** is an AI-powered web application that helps farmers and traders get **fair market prices** for agricultural products and **negotiate confidently using voice**, in their **own regional language**.
+**Multilingual Mandi** is a voice-enabled, AI-powered web platform designed to help farmers and traders discover **fair mandi prices** and **negotiate confidently** in their **own regional language**.
 
-The platform combines **React**, **FastAPI**, **Speech Recognition**, and **Text-to-Speech** to create a simple, inclusive, and intelligent digital mandi experience.
+The system removes language, literacy, and information barriers by combining **React**, **FastAPI**, and **speech technologies** into a simple, inclusive digital mandi experience.
 
 ---
 
 ## 🎯 Problem Statement
 
-Farmers often face:
-- Language barriers in digital platforms  
-- Lack of real-time mandi price awareness  
-- Weak negotiation power with traders  
-- Text-heavy applications that exclude low-literacy users  
+Farmers frequently face:
+- Language barriers on digital platforms  
+- Lack of transparent, real-time mandi pricing  
+- Weak negotiation power against middlemen  
+- Text-heavy apps unsuitable for low-literacy users  
 
-As a result, farmers often do not receive fair value for their produce.
+These challenges often result in **unfair pricing and reduced income**.
 
 ---
 
-## 💡 Solution
+## 💡 Our Solution
 
 **Multilingual Mandi** provides:
-- Voice-based input for product, quantity, and location  
-- AI-generated price ranges based on context  
-- Regional language responses  
-- Voice-driven negotiation assistance  
+- 🎤 **Voice-based input** for product, quantity, and location  
+- 🤖 **AI-generated price ranges** based on context  
+- 🌐 **Regional language support** (English, Hindi, Punjabi, Tamil, Bengali)  
+- 💬 **Voice-driven, multi-turn negotiation assistance**  
 
-All designed with a **farmer-first approach**.
+All built with a **farmer-first, accessibility-first mindset**.
 
 ---
 
 ## 🧠 Key Features
 
-- 🌐 Multilingual support (English, Hindi, Punjabi, Tamil, Bengali)  
-- 🎤 Voice input and voice-based negotiation  
-- 🤖 AI-powered price estimation  
-- 💬 Multi-turn negotiation with AI  
-- 📱 Simple and mobile-friendly UI  
+- 🌐 Multilingual UI & voice responses  
+- 🎙 Speech-to-Text for easy input  
+- 🔊 Text-to-Speech for AI replies  
+- 🤝 AI-assisted price negotiation  
+- 📱 Simple, mobile-friendly interface  
 
 ---
 
@@ -51,16 +51,125 @@ All designed with a **farmer-first approach**.
 
 ### Frontend
 - React.js  
-- Web Speech API  
+- Web Speech API (Speech Recognition)  
 - Speech Synthesis API  
 
 ### Backend
 - FastAPI (Python)  
 - RESTful APIs  
-- Multilingual response handling  
+- Context-aware pricing logic  
 
 ---
 
 ## 📁 Project Structure
+multilingual-mandi/
+│
+├── backend/
+│ ├── main.py
+│ └── requirements.txt
+│
+├── frontend/
+│ ├── public/
+│ │ └── index.html
+│ ├── src/
+│ │ ├── App.js
+│ │ └── index.js
+│ ├── package.json
+│ └── package-lock.json
+│
+├── .kiro/
+│ └── specs/
+│ └── multilingual-mandi/
+│ ├── design.md
+│ ├── requirements.md
+│ └── tasks.md
+│
+├── screenshots/
+│ └── ui.png
+│
+├── .gitignore
+├── .env.example
+└── README.md
+
+
+---
+
+## ⚙️ How to Run Locally
+
+### 🔹 Backend (FastAPI)
+
+```bash
+cd backend
+pip install -r requirements.txt
+python -m uvicorn main:app --reload
+
+Open in browser:
+http://127.0.0.1:8000/docs
+
+🔹 Frontend (React)
+cd frontend
+npm install
+npm start
+
+Open in browser:
+http://localhost:3000
+
+
+🧪 Sample API Response
+
+{
+  "price_range": "₹20–₹24 प्रति किलो",
+  "negotiation_tip": "₹22 से बातचीत शुरू करें।"
+}
+
+🌍 Real-World Impact
+
+📈 Improves farmer bargaining power
+
+🗣 Enables regional-language participation
+
+📱 Encourages digital adoption in rural India
+
+🤝 Reduces dependency on middlemen
+
+🔮 Future Enhancements
+
+Live government mandi price API integration
+
+LLM-based predictive pricing models
+
+GPS-based automatic location detection
+
+WhatsApp / IVR-based access
+
+Android mobile application
+
+⭐ Why This Project Stands Out
+
+Voice-first design for inclusivity
+
+Multilingual AI interaction
+
+Negotiation assistance, not just price display
+
+Strong alignment with AI for Bharat goals
+
+Clean architecture & professional documentation
+
+This is not just a demo, but a deployable social-impact solution.
+
+📜 License
+
+This project is licensed under the MIT License — free to use, modify, and build upon.
+
+⭐ If this project resonates with you, please consider starring the repository.
+
+Empowering farmers. One voice at a time.
+
+
+
+
+
+
 
 
