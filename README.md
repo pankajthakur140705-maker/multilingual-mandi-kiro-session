@@ -62,8 +62,8 @@ All built with a **farmer-first, accessibility-first mindset**.
 ---
 
 ## 📁 Project Structure
+
 multilingual-mandi/
-│
 ├── backend/
 │ ├── main.py
 │ └── requirements.txt
@@ -90,8 +90,6 @@ multilingual-mandi/
 ├── .gitignore
 ├── .env.example
 └── README.md
-
-
 ---
 
 ## ⚙️ How to Run Locally
