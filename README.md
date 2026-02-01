@@ -13,7 +13,7 @@ The system removes language, literacy, and information barriers by combining **R
 
 ---
 ## 🎥 Project Demo (Loom)
-[![Project Demo](https://cdn.loom.com/sessions/thumbnails/b7e4a421bdd04cf39725939d64fc26a0)](https://www.loom.com/share/b7e4a421bdd04cf39725939d64fc26a0)
+[![Project Demo](https://cdn.loom.com/sessions/thumbnails/b7e4a421bdd04cf39725939d64fc26a0.jpg)](https://www.loom.com/share/b7e4a421bdd04cf39725939d64fc26a0)
 
 ## 🎯 Problem Statement
 
