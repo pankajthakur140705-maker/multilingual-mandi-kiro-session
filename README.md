@@ -120,12 +120,12 @@ Open in browser:
 
 ### 🧪 Sample API Response
 
-'''json
+
 {
   "price_range": "₹20–₹24 प्रति किलो",
+  
   "negotiation_tip": "₹22 से बातचीत शुरू करें"
 }
-'''
 
 ### 🌍 Real-World Impact
 
