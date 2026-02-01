@@ -96,24 +96,25 @@ All built with a **farmer-first, accessibility-first mindset**.
 ## ⚙️ How to Run Locally
 
 ### 🔹 Backend (FastAPI)
-
+```bash
 cd backend
 pip install -r requirements.txt
 python -m uvicorn main:app --reload
 
 
 Open in browser:
-http://127.0.0.1:8000/docs
+👉http://127.0.0.1:8000/docs
 
 ### 🔹 Frontend (React)
-
+```bash
 cd frontend
 npm install
 npm start
 
 Open in browser:
-http://localhost:3000
+👉http://localhost:3000
 
+---
 
 ### 🧪 Sample API Response
 
