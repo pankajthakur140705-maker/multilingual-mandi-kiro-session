@@ -105,7 +105,7 @@ python -m uvicorn main:app --reload
 Open in browser:
 👉http://127.0.0.1:8000/docs
 
- 🔹 Frontend (React)
+### 🔹 Frontend (React)
  
  ```bash
 cd frontend
@@ -118,11 +118,14 @@ Open in browser:
 
 ---
 
- 🧪 Sample API Response
+### 🧪 Sample API Response
+
+'''json
 {
   "price_range": "₹20–₹24 प्रति किलो",
   "negotiation_tip": "₹22 से बातचीत शुरू करें"
 }
+'''
 
 ### 🌍 Real-World Impact
 
