@@ -124,36 +124,43 @@ http://localhost:3000
 
 ### 🌍 Real-World Impact
 
--📈 Improves farmer bargaining power
--🗣 Enables regional-language participation
--📱 Encourages digital adoption in rural India
--🤝 Reduces dependency on middlemen
--🔮 Future Enhancements
-
-Live government mandi price API integration
-LLM-based predictive pricing models
-GPS-based automatic location detection
-WhatsApp / IVR-based access
-Android mobile application
-
-### ⭐ Why This Project Stands Out
-
--Voice-first design for inclusivity
--Multilingual AI interaction
--Negotiation assistance, not just price display
--Strong alignment with AI for Bharat goals
--Clean architecture & professional documentation
--This is not just a demo, but a deployable social-impact solution.
-
-### 📜 License
-
-This project is licensed under the MIT License — free to use, modify, and build upon.
-⭐ If this project resonates with you, please consider starring the repository.
-Empowering farmers. One voice at a time.
+- 📈 Improves farmer bargaining power  
+- 🗣 Enables regional-language participation  
+- 📱 Encourages digital adoption in rural India  
+- 🤝 Reduces dependency on middlemen  
 
 ---
 
+### 🔮 Future Enhancements
 
+- Live government mandi price API integration  
+- LLM-based predictive pricing models  
+- GPS-based automatic location detection  
+- WhatsApp / IVR-based access  
+- Android mobile application  
+
+---
+
+### ⭐ Why This Project Stands Out
+
+- Voice-first design for inclusivity  
+- Multilingual AI interaction  
+- Negotiation assistance (not just price display)  
+- Strong alignment with **AI for Bharat** goals  
+- Clean architecture & professional documentation  
+
+This is **not just a demo**, but a **deployable social-impact solution**.
+
+---
+
+### 📜 License
+
+This project is licensed under the **MIT License** — free to use, modify, and build upon.
+
+⭐ If this project resonates with you, please consider starring the repository.  
+**Empowering farmers. One voice at a time.**
+
+---
 
 
 
