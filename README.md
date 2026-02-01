@@ -97,7 +97,7 @@ All built with a **farmer-first, accessibility-first mindset**.
 
 ### 🔹 Backend (FastAPI)
 
-```bash
+
 cd backend
 pip install -r requirements.txt
 python -m uvicorn main:app --reload
@@ -105,7 +105,8 @@ python -m uvicorn main:app --reload
 Open in browser:
 http://127.0.0.1:8000/docs
 
-🔹 Frontend (React)
+### 🔹 Frontend (React)
+
 cd frontend
 npm install
 npm start
@@ -114,55 +115,40 @@ Open in browser:
 http://localhost:3000
 
 
-🧪 Sample API Response
+### 🧪 Sample API Response
 
 {
   "price_range": "₹20–₹24 प्रति किलो",
   "negotiation_tip": "₹22 से बातचीत शुरू करें।"
 }
 
-🌍 Real-World Impact
+### 🌍 Real-World Impact
 
-📈 Improves farmer bargaining power
-
-🗣 Enables regional-language participation
-
-📱 Encourages digital adoption in rural India
-
-🤝 Reduces dependency on middlemen
-
-🔮 Future Enhancements
+-📈 Improves farmer bargaining power
+-🗣 Enables regional-language participation
+-📱 Encourages digital adoption in rural India
+-🤝 Reduces dependency on middlemen
+-🔮 Future Enhancements
 
 Live government mandi price API integration
-
 LLM-based predictive pricing models
-
 GPS-based automatic location detection
-
 WhatsApp / IVR-based access
-
 Android mobile application
 
-⭐ Why This Project Stands Out
+### ⭐ Why This Project Stands Out
 
-Voice-first design for inclusivity
+-Voice-first design for inclusivity
+-Multilingual AI interaction
+-Negotiation assistance, not just price display
+-Strong alignment with AI for Bharat goals
+-Clean architecture & professional documentation
+-This is not just a demo, but a deployable social-impact solution.
 
-Multilingual AI interaction
-
-Negotiation assistance, not just price display
-
-Strong alignment with AI for Bharat goals
-
-Clean architecture & professional documentation
-
-This is not just a demo, but a deployable social-impact solution.
-
-📜 License
+### 📜 License
 
 This project is licensed under the MIT License — free to use, modify, and build upon.
-
 ⭐ If this project resonates with you, please consider starring the repository.
-
 Empowering farmers. One voice at a time.
 
 ---
