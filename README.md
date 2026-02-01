@@ -12,6 +12,8 @@
 The system removes language, literacy, and information barriers by combining **React**, **FastAPI**, and **speech technologies** into a simple, inclusive digital mandi experience.
 
 ---
+## 🎥 Project Demo (Loom)
+👉 [Watch the Demo Video]([https://www.loom.com/share/abcd1234](https://www.loom.com/share/b7e4a421bdd04cf39725939d64fc26a0))
 
 ## 🎯 Problem Statement
 
