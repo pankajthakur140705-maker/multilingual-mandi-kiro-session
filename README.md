@@ -138,19 +138,22 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 
 ### 🔹 Backend (FastAPI)
 
+```bash
 cd backend
 pip install -r requirements.txt
 python -m uvicorn main:app --reload
-
+```
 
 Open in browser:
 👉http://127.0.0.1:8000/docs
 
  🔹 Frontend (React)
-
+ 
+ ```bash
 cd frontend
 npm install
 npm start
+```
 
 Open in browser:
 👉http://localhost:3000
@@ -158,12 +161,13 @@ Open in browser:
 ---
 
  🧪 Sample API Response
-
+ 
+'''json
 {
   "price_range": "₹20–₹24 प्रति किलो",
   "negotiation_tip": "₹22 से बातचीत शुरू करें।"
 }
-
+''''
 
 
 
