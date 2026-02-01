@@ -1,73 +1,66 @@
-# 🇮🇳 Multilingual Mandi – AI for Bharat
+# 🌾 Multilingual Mandi  
+### AI-Powered Voice-Enabled Market Price & Negotiation Assistant for Farmers
 
-**Team:** Techtronics27  
-**Event:** 26 Jan Prompt Challenge – AI for Bharat  
-**Built using:** Kiro (AI-assisted system design)
-
----
-
-## 🧠 Problem Statement
-Local vendors in India face major challenges due to:
-- Language barriers
-- Lack of transparent price discovery
-- Inefficient negotiation processes
-
-These challenges limit fair trade and inclusivity in local markets.
+> **Breaking language barriers in agriculture using AI, voice, and local intelligence.**
 
 ---
 
-## 💡 Solution Overview
-**Multilingual Mandi** is an AI-powered web platform that creates a real-time
-linguistic bridge for local trade.
+## 🚀 Overview
 
-The platform enables:
-- Multilingual communication across Indian languages
-- AI-driven price discovery
-- Intelligent negotiation assistance
+**Multilingual Mandi** is an AI-powered web application that helps farmers and traders get **fair market prices** for agricultural products and **negotiate confidently using voice**, in their **own regional language**.
 
-This empowers vendors to trade confidently, transparently, and efficiently.
+The platform combines **React**, **FastAPI**, **Speech Recognition**, and **Text-to-Speech** to create a simple, inclusive, and intelligent digital mandi experience.
 
 ---
 
-## ⚙️ System Architecture
-- Fully serverless and scalable design
-- AI-powered language understanding and reasoning
-- Modular architecture designed using Kiro’s requirements-first workflow
+## 🎯 Problem Statement
 
-The system design includes:
-- Clear separation of client, API, AI, and data layers
-- Low-latency and cost-efficient workflows
-- Secure handling of user interactions
+Farmers often face:
+- Language barriers in digital platforms  
+- Lack of real-time mandi price awareness  
+- Weak negotiation power with traders  
+- Text-heavy applications that exclude low-literacy users  
 
----
-
-## 🔄 User Flow
-1. Vendor accesses the platform in their preferred language
-2. Enters product or trade details
-3. AI suggests fair market prices
-4. AI assists during negotiation
-5. Transparent deal confirmation
+As a result, farmers often do not receive fair value for their produce.
 
 ---
 
-## 🤖 AI Capabilities
-- Multilingual language translation
-- Context-aware price intelligence
-- Smart negotiation guidance
-- Inclusive design for varying literacy levels
+## 💡 Solution
+
+**Multilingual Mandi** provides:
+- Voice-based input for product, quantity, and location  
+- AI-generated price ranges based on context  
+- Regional language responses  
+- Voice-driven negotiation assistance  
+
+All designed with a **farmer-first approach**.
 
 ---
 
-## 🧠 How Kiro Was Used
-This project was designed using **Kiro** as an AI-assisted system design partner.
+## 🧠 Key Features
 
-Kiro was used to:
-- Define detailed project requirements
-- Generate system architecture and AI workflows
-- Create an implementation plan (task list)
-
-All Kiro-generated artifacts are included in the mandatory `/.kiro` directory.
+- 🌐 Multilingual support (English, Hindi, Punjabi, Tamil, Bengali)  
+- 🎤 Voice input and voice-based negotiation  
+- 🤖 AI-powered price estimation  
+- 💬 Multi-turn negotiation with AI  
+- 📱 Simple and mobile-friendly UI  
 
 ---
 
-## 📂 Repository Structure
+## 🏗️ Tech Stack
+
+### Frontend
+- React.js  
+- Web Speech API  
+- Speech Synthesis API  
+
+### Backend
+- FastAPI (Python)  
+- RESTful APIs  
+- Multilingual response handling  
+
+---
+
+## 📁 Project Structure
+
+
