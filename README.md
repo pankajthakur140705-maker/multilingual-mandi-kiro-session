@@ -137,7 +137,7 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 ## ⚙️ How to Run Locally
 
 ### 🔹 Backend (FastAPI)
-```bash
+
 cd backend
 pip install -r requirements.txt
 python -m uvicorn main:app --reload
