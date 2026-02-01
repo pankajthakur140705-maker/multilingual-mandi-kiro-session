@@ -63,34 +63,33 @@ All built with a **farmer-first, accessibility-first mindset**.
 
 ## 📁 Project Structure
 
-multilingual-mandi/
-├── backend/
-│ ├── main.py
-│ └── requirements.txt
-│
-├── frontend/
-│ ├── public/
-│ │ └── index.html
-│ ├── src/
-│ │ ├── App.js
-│ │ └── index.js
-│ ├── package.json
-│ └── package-lock.json
-│
-├── .kiro/
-│ └── specs/
-│ └── multilingual-mandi/
-│ ├── design.md
-│ ├── requirements.md
-│ └── tasks.md
-│
-├── screenshots/
-│ └── ui.png
-│
-├── .gitignore
-├── .env.example
-└── README.md
-
+    multilingual-mandi/
+    ├── backend/
+    │   ├── main.py
+    │   └── requirements.txt
+    │
+    ├── frontend/
+    │   ├── public/
+    │   │   └── index.html
+    │   ├── src/
+    │   │   ├── App.js
+    │   │   └── index.js
+    │   ├── package.json
+    │   └── package-lock.json
+    │
+    ├── .kiro/
+    │   └── specs/
+    │       └── multilingual-mandi/
+    │           ├── design.md
+    │           ├── requirements.md
+    │           └── tasks.md
+    │
+    ├── screenshots/
+    │   └── ui.png
+    │
+    ├── .gitignore
+    ├── .env.example
+    └── README.md
 
 ---
 
